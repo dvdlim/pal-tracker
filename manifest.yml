@@ -4,6 +4,6 @@
     - name: pal-tracker
       path: build/libs/pal-tracker.jar
       routes:
-      - route: al-pal-tracker-review.apps.chicken.pal.pivotal.io
+      - route: al-pal-tracker-review.apps.pal.pivotal.io
       env:
         WELCOME_MESSAGE: Hello from the review environment
