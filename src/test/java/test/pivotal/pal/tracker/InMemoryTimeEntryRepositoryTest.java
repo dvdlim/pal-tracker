@@ -17,6 +17,7 @@ public class InMemoryTimeEntryRepositoryTest {
         TimeEntry createdTimeEntry = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
 
         TimeEntry expected = new TimeEntry(1L, 123L, 456L, LocalDate.parse("2017-01-08"), 8);
+        System.out.println();
         assertThat(createdTimeEntry).isEqualTo(expected);
 
         TimeEntry readEntry = repo.find(createdTimeEntry.getId());
@@ -64,8 +65,8 @@ public class InMemoryTimeEntryRepositoryTest {
     public void delete() throws Exception {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         TimeEntry created = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
-
         repo.delete(created.getId());
+        System.out.println("Suceesfully deleted "+created.getId());
         assertThat(repo.list()).isEmpty();
     }
 }
